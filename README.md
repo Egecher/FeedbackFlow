@@ -77,4 +77,3 @@ Katkılar memnuniyetle karşılanır! Lütfen geliştirmeler veya yeni özellikl
 ---
 
 *Egecher tarafından geliştirilmiştir.*
-```
