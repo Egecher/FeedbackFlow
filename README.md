@@ -2,6 +2,8 @@
 
 FeedbackFlow, kullanıcıların web siteleri üzerinde geri bildirim toplamasını ve görüntülemesini sağlayan basit ve şık bir web tabanlı geri bildirim sistemidir. Kullanıcı dostu arayüzü ve API tabanlı yapısıyla, web geliştiricilerin kullanıcı geri bildirimlerini ve puanlamalarını kolayca toplaması için mükemmeldir.
 
+![Geri Bildirim Sistemi](public/feedback-system.png)
+
 ## Özellikler
 
 - **API Tabanlı Geri Bildirim Toplama**: Kullanıcılardan API aracılığıyla geri bildirim toplayın.
