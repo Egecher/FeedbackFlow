@@ -11,6 +11,9 @@ FeedbackFlow, kullanıcıların web siteleri üzerinde geri bildirim toplamasın
 - **Puanlama Sistemi**: 1-5 arasında yıldız şeklinde puanlama toplayın ve görsel olarak görüntüleyin.
 - **Geri Bildirim Görüntüleme**: Geri bildirimleri sitenizde düzenli bir tablo halinde görüntüleyin.
 - **Ortalama Puan Hesaplama**: Puanlamaların ortalamasını otomatik olarak hesaplar ve görüntüler.
+- **Admin Paneli**: Geri bildirimleri yönetmek ve analiz etmek için gelişmiş admin paneli. 
+
+![Admin Panel](admin-panel.png)
 
 ## Kurulum
 
