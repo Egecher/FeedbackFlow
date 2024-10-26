@@ -18,7 +18,7 @@ FeedbackFlow, kullanıcıların web siteleri üzerinde geri bildirim toplamasın
    ```bash
    git clone https://github.com/Egecher/feedbackflow.git
    ```
-   
+
 2. Gerekli bağımlılıkları yükleyin:
    ```bash
    npm install
@@ -50,17 +50,18 @@ POST /feedback
 ```json
 {
   "username": "egecher",
+  "email": "example@gmail.com",
   "message": "Hizmet harikaydı!",
   "reason": "Hızlı ve güvenilir",
   "rating": 5
 }
 ```
 
-### Geri Bildirim Alma (GET)
+### Geri Bildirim Alma (POST)
 
 Tüm geri bildirim verilerini almak için:
 ```
-GET /feedbacks
+POST /feedbacks
 ```
 
 ## Lisans
