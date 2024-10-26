@@ -1,0 +1,107 @@
+[
+  {
+    "username": "egecher",
+    "email": "example@gmail.com",
+    "message": "çok güzel bir bot",
+    "reason": "yorum",
+    "rating": 5
+  },
+  {
+    "username": "gizli",
+    "email": "example@gmail.com",
+    "message": "dsadsad",
+    "reason": "şikayet",
+    "rating": 3
+  },
+  {
+    "username": "gizli",
+    "email": "example@gmail.com",
+    "message": "mükemmel",
+    "reason": "yorum",
+    "rating": 5
+  },
+  {
+    "username": "gizli",
+    "email": "example@gmail.com",
+    "message": "Deneme",
+    "reason": "öneri",
+    "rating": 5
+  },
+  {
+    "username": "gizli",
+    "email": "example@gmail.com",
+    "message": "çok iyi bir bot ve zamanla daha da çok gelişeceğine inanıyorum başarılarının devamını dilerim ve çok iyi çalışmalara adım atacağına çok inanıyorummm:))",
+    "reason": "yorum",
+    "rating": 5
+  },
+  {
+    "username": "gizli",
+    "email": "example@gmail.com",
+    "message": "gf",
+    "reason": "şikayet",
+    "rating": 5
+  },
+  {
+    "username": "egecher",
+    "email": "example@gmail.com",
+    "message": "çok güzel bir bot",
+    "reason": "yorum",
+    "rating": 5
+  },
+  {
+    "username": "gizli",
+    "email": "example@gmail.com",
+    "message": "Değerlendirmeler komutu yapılabilir yıldızların ortalaması yazar birkaç yorum örneği yazar",
+    "reason": "öneri",
+    "rating": 5
+  },
+  {
+    "username": "gizli",
+    "email": "example@gmail.com",
+    "message": "güzel bir bot",
+    "reason": "yorum",
+    "rating": 5
+  },
+  {
+    "username": "gizli",
+    "email": "example@gmail.com",
+    "message": "gizli baba",
+    "reason": "yorum",
+    "rating": 5
+  },
+  {
+    "username": "egecher",
+    "email": "example@gmail.com",
+    "message": "çekiliş sistemi gelmeli",
+    "reason": "öneri",
+    "rating": 5
+  },
+  {
+    "username": "gizli",
+    "email": "example@gmail.com",
+    "message": "...",
+    "reason": "yorum",
+    "rating": 5
+  },
+  {
+    "username": "egecher",
+    "email": "example@gmail.com",
+    "message": "deneme",
+    "reason": "yorum",
+    "rating": "5"
+  },
+  {
+    "username": "gizli",
+    "email": "example@gmail.com",
+    "message": "Geri bildirim sistemi çok iyi olmuş",
+    "reason": "yorum",
+    "rating": "5"
+  },
+  {
+    "username": "deneme",
+    "email": "example@gmail.com",
+    "message": "çok iyi sistem",
+    "reason": "yorum",
+    "rating": "5"
+  }
+]

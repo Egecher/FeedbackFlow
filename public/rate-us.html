@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bize Geri Bildirimde Bulunun 🤍</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+            border-color: #4CAF50;
+        }
+
+        select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: border-color 0.3s;
+        }
+
+        select:hover {
+            border-color: #888;
+        }
+
+        textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .star {
+            font-size: 30px;
+            cursor: pointer;
+            color: lightgray;
+            transition: color 0.3s;
+        }
+
+        .star:hover {
+            color: gold;
+        }
+
+        .star.selected {
+            color: gold;
+        }
+
+        .rating-message {
+            font-size: 14px;
+            color: red;
+            margin-top: 10px; 
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Bize Geri Bildirimde Bulunun 🤍</h1>
+        
+        <form id="feedbackForm">
+            <label for="username">Adınız:</label>
+            <input type="text" id="username" name="username" placeholder="Adınızı girin" required>
+            
+            <label for="email">E-posta Adresiniz:</label>
+            <input type="email" id="email" name="email" placeholder="E-posta adresinizi girin" required>
+
+            <label for="message">Mesajınız:</label>
+            <textarea id="message" name="message" placeholder="Mesajınızı yazın.." required></textarea>
+
+            <div class="form-container">
+                <div>
+                    <label for="reason">Sebep:</label>
+                    <select id="reason" name="reason">
+                        <option value="öneri">Öneri</option>
+                        <option value="yorum">Yorum</option>
+                        <option value="şikayet">Şikayet</option>
+                    </select>
+                </div>
+    
+                <div>
+                    <label for="rating" style="margin-bottom: 0;">Bizi Değerlendirin:</label>
+                    <div id="stars">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="rating-message" id="ratingMessage"></div>
+                </div>
+            </div>
+
+            <button type="submit">Geri Bildirim Gönder</button>
+        </form>
+    </div>
+
+    <script>
+        const stars = document.querySelectorAll('.star');
+        const ratingMessage = document.getElementById('ratingMessage');
+        let selectedRating = 0;
+
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                selectedRating = star.getAttribute('data-value');
+                stars.forEach(s => s.classList.remove('selected'));
+                for (let i = 0; i < selectedRating; i++) {
+                    stars[i].classList.add('selected');
+                }
+                ratingMessage.textContent = `Derecelendirmeniz: ${selectedRating} Yıldız`;
+            });
+        });
+
+        const form = document.getElementById('feedbackForm');
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            if (selectedRating === 0) {
+                ratingMessage.textContent = 'Lütfen 5 yıldız üzerinden derecelendiriniz.';
+                return;
+            }
+
+            const formData = {
+                username: document.getElementById('username').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value,
+                reason: document.getElementById('reason').value,
+                rating: selectedRating
+            };
+
+            fetch('http://localhost:3000/feedback', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Ağ hatası!');
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert('Geri bildiriminiz için teşekkür ederiz!');
+                form.reset();
+                stars.forEach(s => s.classList.remove('selected'));
+                ratingMessage.textContent = '';
+                selectedRating = 0;
+            })
+            .catch(error => {
+                console.error('Hata:', error);
+                alert('Bir hata oluştu, lütfen tekrar deneyin.');
+            });
+        });
+    </script>
+
+</body>
+</html>
